@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width" />
+<title>Consultar Clima</title>
+<link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+
+</head>
+<body>
+	<div class="container">
+		<div class="row" style="margin: 20px 0;">
+			<h4>Consultar Clima</h4>
+		</div>
+		<div class="row" style="margin: 5px 0;">
+			<form class="form-inline" method="GET" th:action="@{/consultarClima}">
+				<div class="input-group">
+					<select name="codigo" class="custom-select">
+						<option value="">Selecione a cidade</option>
+						<option th:each="cidade : ${cidades}" th:value="${cidade.codigo}"
+							th:text="${cidade.nome}"></option>
+					</select>
+					<div class="input-group-append">
+						<button type="submit" class="btn btn-primary">Consultar</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div class="container" th:if="${climaCidade != null}" th:object="${climaCidade}">
+		<div class="row">
+			<div class="col-sm">
+				<label th:text="'Temperatura: ' + *{principal.temperatura} + 'ºC'"></label>
+			</div>
+			<div class="col-sm">
+				<label th:text="'Temperatura Mínima: ' + *{principal.temperaturaMinima} + 'ºC'"></label>
+			</div>
+			<div class="col-sm">
+				<label th:text="'Temperatura Máxima: ' + *{principal.temperaturaMaxima} + 'ºC'"></label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm">
+				<label th:text="'Umidade: ' + *{principal.umidade} + '%'"></label>
+			</div>
+			<div class="col-sm">
+				<label th:text="'Pressão Atmosférica: ' + *{principal.pressaoAr} + ' hPa'"></label>
+			</div>
+			<div class="col-sm">
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
