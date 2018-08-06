@@ -1,12 +1,12 @@
 # Weather
 
-É uma aplicação para consulta do clima de cidades, que utiliza a [OpenWeatherMap API] (http://openweathermap.org/api).
+É uma aplicação para consulta do clima de cidades, que utiliza a [OpenWeatherMap API](http://openweathermap.org/api).
 
 ## Requisitos
 
 * Java 8;
 * Maven 3;
-* API key da [OpenWeatherMap API] (http://openweathermap.org/api).
+* API key da [OpenWeatherMap API](http://openweathermap.org/api).
 
 ## Como executar
 
