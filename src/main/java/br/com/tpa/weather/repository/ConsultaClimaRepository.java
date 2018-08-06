@@ -9,8 +9,8 @@ public interface ConsultaClimaRepository {
 	
 	String URL_API_OPEN_WEATHER = "https://api.openweathermap.org/data/2.5";
 	
-	@RequestLine("GET /weather?id={id}&APPID={chave}")
+	@RequestLine("GET /weather?id={id}&APPID={chave}&units={unit}")
 	@Headers("Content-Type: application/json")
-	ConsultaClimaDto getClimaCidade(@Param("id") Long id, @Param("chave") String chave);
+	ConsultaClimaDto getClimaCidade(@Param("id") Long id, @Param("chave") String chave, @Param("unit") String unit);
 
 }

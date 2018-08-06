@@ -12,4 +12,13 @@ public class AppProperties {
 	public String getChaveOpenWeather() {
 		return chaveOpenWeather;
 	}
+	
+	@Value("${unit.openweather}")
+	private String unitOpenWeather;
+	
+	public String getUnitOpenWeather() {
+		return unitOpenWeather;
+	}
+
+	
 }

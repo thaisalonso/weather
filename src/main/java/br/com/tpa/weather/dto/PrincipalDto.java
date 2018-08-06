@@ -18,8 +18,8 @@ public class PrincipalDto {
 	}
 	
 	@JsonProperty("temp")
-	public void setTemperatura(BigDecimal temperaturaKelvin) {
-		this.temperatura = converterKelvinParaCelsius(temperaturaKelvin);
+	public void setTemperatura(BigDecimal temperatura) {
+		this.temperatura = temperatura;
 	}
 	
 	@JsonProperty("pressaoAr")
@@ -48,8 +48,8 @@ public class PrincipalDto {
 	}
 	
 	@JsonProperty("temp_min")
-	public void setTemperaturaMinima(BigDecimal temperaturaMinimaKelvin) {
-		this.temperaturaMinima = converterKelvinParaCelsius(temperaturaMinimaKelvin);
+	public void setTemperaturaMinima(BigDecimal temperaturaMinima) {
+		this.temperaturaMinima = temperaturaMinima;
 	}
 	
 	@JsonProperty("temperaturaMaxima")
@@ -58,15 +58,8 @@ public class PrincipalDto {
 	}
 	
 	@JsonProperty("temp_max")
-	public void setTemperaturaMaxima(BigDecimal temperaturaMaximaKelvin) {
-		this.temperaturaMaxima = converterKelvinParaCelsius(temperaturaMaximaKelvin);
-	}
-	
-	private BigDecimal converterKelvinParaCelsius(BigDecimal temperatura) {
-		if (temperatura == null) {
-			return null;
-		}
-		return temperatura.subtract(new BigDecimal("273.15")).setScale(0, BigDecimal.ROUND_HALF_UP);
+	public void setTemperaturaMaxima(BigDecimal temperaturaMaxima) {
+		this.temperaturaMaxima = temperaturaMaxima;
 	}
 	
 }
